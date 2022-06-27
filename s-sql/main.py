@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 from colorama import *
 import os
 from time import *
 import optparse
 import random
-
+import sys
 def progress(percent=0, width=40):
     left = width * percent // 100
     right = width - left
@@ -84,7 +85,8 @@ class info:
     Restart Program :
 
         restart or reboot
-
+    To exit simple type :
+      quit
     """
 
 class scan:
@@ -123,6 +125,8 @@ if __name__  ==  "__main__":
             load()
             os.system("python3 ./s-sql/start.py")
 
+        elif(cmd == "quit"):
+          sys.exit(-1)
         elif(ping in cmd):
             url = cmd.replace("ping ","")
             os.system(f"ping {url}")
